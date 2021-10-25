@@ -1,0 +1,17 @@
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+package-lock.json
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Folder config file
+Desktop.ini
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Тебе не нужен Bootstrap! Или нужен? Или все же не нужен?</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="vendor/highlight.github.css">
+    <style>
+        :root {
+            --main-color: #5723a1;
+            --highlight-color: #6f12f4;
+            --back-color: #1b1b1b;
+        }
+
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+
+        .shower.full .slide .shout.grow,
+        .shower.full .slide .shout.shrink {
+            transition: none !important;
+
+        }
+
+        .shower.full {
+            background-color: #111;
+
+        }
+
+        .shower.list .slide.active {
+            box-shadow: 0 0 0 1px var(--highlight-color), 0 0 0 20px var(--highlight-color), 0 20px 50px rgba(0, 0, 0, .3);
+
+        }
+
+        .slide {
+            padding-top: 60px;
+            padding-left: 60px;
+            padding-right: 60px;
+
+        }
+
+        .slide::after {
+            color: #1b1b1b;
+            background: 0 0;
+            height: 75px;
+            right: 20px;
+            left: auto;
+        }
+
+        .slide.no-page::after {
+            opacity: 0;
+        }
+
+        .slide a {
+            color: var(--highlight-color);
+
+        }
+
+        .slide h2 {
+            color: var(--back-color);
+            font-family: 'PT Sans', sans-serif;
+            background: #6f12f4;
+            background: -webkit-linear-gradient(90deg, #351463 0%, #5723a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        .slide h2.square {
+            color: #ffffff;
+            font-family: 'PT Sans', sans-serif;
+            margin-top: -30px;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 5em;
+
+        }
+
+        .slide h2.ask {
+            margin-top: 150px;
+            font-size: 72px;
+            width: 70%;
+
+        }
+
+        .slide h2.square::before {
+            content: '';
+            display: block;
+            background-color: #2d2d2d;
+            width: 550px;
+            height: 400px;
+            position: absolute;
+            top: calc(50% - 200px);
+            left: calc(50% - 275px);
+            z-index: -10;
+            border: 5px solid #fff;
+            opacity: 0.25;
+
+        }
+
+        .slide h2.label {
+            background: #6f12f4;
+            background: linear-gradient(90deg, #6f12f4 0%, #5723a1 100%);
+            color: #fff;
+            padding: 10px;
+            display: inline-block;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: white;
+
+        }
+
+        #cover {
+            background: rgb(78, 25, 130);
+            background: linear-gradient(90deg, rgba(78, 25, 130, 1) 0%, rgba(101, 7, 237, 1) 100%);
+
+        }
+
+
+
+        .cover img {
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+
+        }
+
+        .logo {
+            width: 75px;
+            background-color: #fff;
+            padding: 5px;
+
+        }
+
+        .logo+.logo {
+            margin-left: 30px;
+
+        }
+
+        .link {
+            position: relative;
+            margin-left: 1.8em;
+            line-height: 1.3em;
+
+        }
+
+        .link::before {
+            left: -1.8em;
+            position: absolute;
+            top: 0.1em;
+            display: inline-block;
+            width: 1.5em;
+            height: 1.4em;
+            content: '';
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .link-github::before {
+            background-image: url('pictures/github-logo.svg');ß
+
+        }
+    </style>
+</head>
+
+<body class="shower list">
+    <header class="caption">
+        <h1>Тебе не нужен Bootstrap! Или нужен? Или все же не нужен?</h1>
+    </header>
+    <section id="cover" class="slide no-page">
+        <h2 style="margin-top: 50px; font-size: 3.2em;" class="label">Тебе не нужен Bootstrap!</h2>
+        <p style="font-size: 2em; color: white; padding-left: 10px" class="next">Или нужен?<span class="next"> Или всё
+                же не нужен?</span></p>
+        <p
+            style="margin-top: 95px; color: white; width: 50%; margin-left: 50%; font-size: 32px; line-height: 1; text-align: right;">
+            Саша Шинкевич<br><a href="https://twitter.com/neesoglasnaja" target="_blank"
+                style="color: white; font-size: 20px">@neesoglasnaja</a></p>
+    </section>
+    <section id="" class="slide">
+        <div style="margin-left: 45%; width: 60%; margin-top: 0px">
+            <h2 class="label">Кто я?</h2>
+            <ul style="font-size: 0.95em;">
+                <li>Начинала верстать на таблицах 15 лет назад</li>
+                <li class="next">Google Developer Expert в Web Technologies</li>
+                <li class="next">WomenTechmakers Ambassador</li>
+                <li style="text-decoration: line-through" class="next">Счастливая безработная</li>
+                <li class="next">Engineering Manager в Bravado</li>
+            </ul><img src="pictures/me.jpg" class="cover" />
+            <p style="margin-top: 50px; display: flex; align-items: center"><img src="pictures/minskcss.png"
+                    class="logo"><img src="pictures/minskjs.png" style="width: 75px; padding-left: 0; padding-right: 0;"
+                    class="logo"><img src="pictures/css-minsk-js.svg"
+                    style="background-color: #2b2727; height: 65px; width: 70px" class="logo"><img src="pictures/fc.png"
+                    style="height: 75px" class="logo"></p>
+        </div>
+    </section>
+    <section id="" class="slide no-page"><img src="pictures/bootstrap.svg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Bootstrap — это...</h2>
+        <ul>
+            <li>Библиотека компонентов</li>
+            <li class="next">CSS-фреймворк</li>
+            <li class="next">UI-библиотека</li>
+        </ul><img src="pictures/example.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><a
+            href="https://2020.stateofcss.com/en-US/technologies/css-frameworks/#css_frameworks_experience_ranking"
+            class="copyright">State of CSS #Rankins</a><img src="pictures/bootstrap-awareness.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/story.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><a href="https://blog.getbootstrap.com/2012/09/29/onward/"
+            class="copyright">Уход Bootstrap из Twitter</a><img src="pictures/twitter.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><a href="https://expo.getbootstrap.com"
+            class="copyright">https://expo.getbootstrap.com</a><img src="pictures/examples/codecademy.jpg"
+            class="cover" />
+        <div class="next"><img src="pictures/examples/divshot.jpg" class="cover" />
+        </div>
+        <div class="next"><img src="pictures/examples/gosquared.jpg" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide  no-page"><a href="http://3d.miu.by/" class="copyright">http://3d.miu.by/</a><img
+            src="pictures/miu.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/best.jpg" class="cover" />
+        <div class="next"><img src="pictures/best-more.jpg" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/fine.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/dont/1.png" class="cover"><img src="pictures/dont/2.png"
+            class="cover next"><img src="pictures/dont/5.png" class="cover next"><img src="pictures/dont/3.png"
+            class="cover next"><img src="pictures/dont/4.png" class="cover next">
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Почему не&nbsp;нужен Bootstrap?</h2><img src="pictures/sad.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  shout">
+        <h2 class="shout">Проблемы Open Source</h2>
+        <div class="hashtag">#плохо</div>
+    </section>
+    <section id="" class="slide  no-page">
+        <h2>Проблемы Open Source</h2>
+        <ul>
+            <li>Есть только то, что есть<img src="pictures/files.jpg" class="cover" />
+            </li>
+            <li class="next">Инертность<img src="pictures/issues.jpg" class="cover" />
+            </li>
+            <li class="next">Отставание от стандартов<img src="pictures/standards.jpg" class="cover" />
+            </li>
+        </ul>
+    </section>
+    <section id="" class="slide  shout">
+        <h2 class="shout">Кастомизация</h2>
+        <div class="hashtag">#плохо</div>
+    </section>
+    <section id="" class="slide"><img src="pictures/theming.jpg" class="cover" />
+        <div class="next"><img src="pictures/gif/confused.gif" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide">
+        <pre><code class="css">.btn {
+  /* ... */
+  cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+  @include button-size($btn-padding-y, $btn-padding-x,
+     $btn-font-size, $btn-border-radius);
+}</code></pre><img src="pictures/why.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><a href="https://youtu.be/-DvdYLWnPhc"
+            class="copyright">https://youtu.be/-DvdYLWnPhc</a><img src="pictures/seriozha.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  shout"><img src="pictures/customize1.jpg" class="cover" />
+        <div class="next"><img src="pictures/customize2.jpg" class="cover" />
+        </div>
+        <div class="next"><img src="pictures/rambo.jpg" class="cover" />
+        </div><a href="https://getbootstrap.com/docs/5.0/customize/css-variables/" class="copyright">Customize CSS
+            Variables</a>
+    </section>
+    <section id="" class="slide  shout"><img src="pictures/crush-kill.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><img src="pictures/important.jpg" class="cover" />
+        <div class="next"><img src="pictures/important2.png" style="width: 95%; border: 3px solid red" class="cover">
+        </div>
+        <div class="next"><img src="pictures/important3.png" style="width: 95%; border: 3px solid red" class="cover">
+        </div>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/ploho.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  shout"><img src="pictures/custom.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page">
+        <h2 class="shout">Методология наименования</h2>
+        <div class="hashtag">#плохо</div>
+        <div class="next"><img src="pictures/no.png" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide"><img src="pictures/atomic.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><a
+            href="https://2019.stateofcss.com/technologies/methodologies/#methodologies-experience-heatmap"
+            class="copyright">State of CSS #methodologies</a><img src="pictures/bem.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="shout">jQuery</h2>
+        <div class="hashtag">#плохо</div>
+    </section>
+    <section id="" class="slide"><img src="pictures/ie.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><a href="https://getbootstrap.com/docs/5.0/migration/#javascript-2" class="copyright">В
+            5 версии избавились</a><img src="pictures/jquery.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><a
+            href="https://getbootstrap.com/docs/5.0/getting-started/browsers-devices/#internet-explorer"
+            class="copyright">Поддержка браузеров и устройств Bootstrap 5. Internet Explorer</a><img
+            src="pictures/ie_support.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Использовать Bootstrap в&nbsp;2021?</h2><img src="pictures/philosoraptor.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/themeforest.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/npm.jpg" class="cover" /><a
+            href="https://getbootstrap.com/docs/5.0/getting-started/browsers-devices/#internet-explorer"
+            class="copyright">Bootstrap в NPM</a>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/trends.jpg" class="cover" /><a
+            href="https://www.npmtrends.com/bootstrap" class="copyright">NPM Trends: Bootstrap</a>
+    </section>
+    <section id="" class="slide">
+        <h2>Почему Bootstrap</h2>
+        <ul>
+            <li>Просто, быстро и удобно копипастить</li>
+            <li class="next">Большой набор базовых компонентов</li>
+            <li class="next">Выглядит презентабельно из коробки</li>
+            <li class="next">Только HTML, CSS и JavaScript (jQuery)</li>
+        </ul><img src="pictures/not-bad.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Версии для JS фреймворков...</h2>
+        <ul>
+            <li><a href="https://react-bootstrap.github.io" class="github">React Bootstrap</a></li>
+            <li><a href="https://ng-bootstrap.github.io">ng-bootstrap</a></li>
+            <li><a href="https://bootstrap-vue.js.org/">BootstrapVue</a></li>
+            <li>...</li>
+        </ul>
+        <h2 class="label next">...полностью переписаны!</h2>
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Что хорошо в&nbsp;Bootstrap?</h2><img src="pictures/good.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/gif/lol.webp" style="height: 100%" class="cover">
+        <div class="next"><img src="pictures/serious.jpg" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide">
+        <h2 class="shout">Типографика</h2>
+        <div class="hashtag">#ну_ок</div>
+    </section>
+    <section id="" class="slide  no-page">
+        <h2>Типографика</h2>
+        <p>UI kit по заголовкам и текстовым стилям</p>
+        <ul>
+            <li class="next"><a href="https://devinhunt.github.io/typebase.css/">typebase.css</a></li>
+            <li class="next"><a href="https://matejlatin.github.io/Gutenberg/">Gutenberg</a></li>
+            <li class="next"><a href="http://typeplate.com/">Typeplate</a></li>
+        </ul><img src="pictures/typo1.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/font.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page">
+        <h2 class="ask">Сделай UI Kit со&nbsp;стилями типографики</h2>
+        <div class="hashtag">#justdoit</div><img src="pictures/typo2.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="shout">Семантика</h2>
+        <div class="hashtag">#ну_ок</div>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/choice.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/semantic.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/semantic-hell.jpg" class="cover" />
+        <div class="next"><img src="pictures/semantic-zoom.jpg" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/makeev.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page">
+        <h2 class="ask">Верстай семантично</h2>
+        <div class="hashtag">#justdoit</div><a href="https://www.youtube.com/watch?v=bDYEnNzprzE"
+            class="copyright">Семантика для циников, Вадим Макеев</a><img src="pictures/duck.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="shout">a11y</h2>
+        <div class="hashtag">#ну_ок</div>
+    </section>
+    <section id="" class="slide"><img src="pictures/ally.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><img src="pictures/a11y.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Верстай<br>доступно</h2>
+        <div class="hashtag">#justdoit</div><img src="pictures/a11y_do.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="shout">Макетные сетки</h2>
+        <div class="hashtag">#ну_ок</div>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/grids-yes.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/old.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 style="margin-top: 90px; text-align: center; font-size: 90px;">
+            Макетные&nbsp;сетки<br>=<br>визуальный&nbsp;порядок</h2>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/grids.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Расскажи дизайнеру о&nbsp;сетках</h2>
+        <div class="hashtag">#justdoit</div>
+    </section>
+    <section id="" class="slide">
+        <h2 class="shout">RWD и MF</h2>
+        <div class="hashatag">#ну_ок</div>
+        <p style="margin-top: 320px; text-align: center">*Responsive Web Design и Mobile First</p><span
+            class="next"><img src="pictures/captain.jpg" class="cover" /></span>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/adaptive.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/rwd.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><img src="pictures/mobile.jpg" class="cover" /><a
+            href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide"
+            class="copyright">Статистика использования устройств</a>
+    </section>
+    <section id="" class="slide">
+        <h2>Mobile First и Desktop First</h2>
+        <pre><code class="css">/* Mobile First */
+@media (min-width: ...) { ... }</code></pre>
+        <pre class="next"><code class="css">/* Desktop First */
+@media (max-width: ...) { ... }</code></pre>
+    </section>
+    <section id="" class="slide  no-page"><a href="https://habr.com/ru/post/473186/" class="copyright">Расстановка
+            элементов без media-запросов</a><img src="pictures/flex.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Начни делать Mobile First!</h2>
+        <div class="hashtag">#justdoit</div>
+    </section>
+    <section id="" class="slide">
+        <h2 style="font-size: 120px" class="shout">Кроссбраузерность</h2>
+        <div class="hashtag">#ну_ок</div>
+    </section>
+    <section id="" class="slide"><img src="pictures/war.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><a href="https://getbootstrap.com/docs/5.0/getting-started/browsers-devices/"
+            class="copyright">Browsers and devices</a><img src="pictures/support.jpg" class="cover" />
+        <div class="next"><img src="pictures/support_v5.jpg" class="cover" />
+        </div>
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">Тестируй код кроссбраузерно</h2><a href="https://youtu.be/PivJXnddkIY"
+            class="copyright">Тестирование фронтенда, или Как не быть ленивым кодером</a>
+        <div class="hashtag">#justdoit</div>
+    </section>
+    <section id="" class="slide">
+        <h2 style="width: 80%" class="ask">Хочу&nbsp;___&nbsp;от&nbsp;Bootstrap. Как&nbsp;правильно?</h2><img
+            src="pictures/philosoraptor.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><img src="pictures/sass.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <pre><code class="css">/* Required */
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";</code></pre>
+        <pre class="next"><code class="css">/* Optional */
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/grid";
+...</code></pre>
+    </section>
+    <section id="" class="slide">
+        <h2 style="width: 80%" class="ask">Исходники Bootstrap как&nbsp;вдохновение</h2>
+        <div class="hashtag">#justdoit</div>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/deeper.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">А если превратить любой&nbsp;проект в&nbsp;UI&nbsp;библиотеку?</h2><img
+            src="pictures/philosoraptor.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><img src="pictures/steal.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 style="margin-top: 250px; text-align: center;">Плохой дизайн сложно превратить в&nbsp;хороший CSS-фреймворк
+        </h2><img src="pictures/warning.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Без UI Kit...</h2><img src="pictures/ui-kit.jpg" width="100%">
+    </section>
+    <section id="" class="slide">
+        <h2>...всё будет ОЧЕНЬ ПЛОХО</h2><img src="pictures/bad-code-2.jpg" width="100%">
+    </section>
+    <section id="" class="slide  no-page"><a href="https://css-minsk-js.by"
+            class="copyright">https://css-minsk-js.by</a><img src="pictures/css-minsk-js.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Проект состоит из...</h2>
+        <ul>
+            <li>Настроек проекта</li>
+            <li class="next">Глобальных стилей, переменных</li>
+            <li class="next">Макетных сеток и раскладки</li>
+            <li class="next">Типографики и стилей контента</li>
+            <li class="next">Компонентов</li>
+        </ul>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/tech.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><a href="https://youtu.be/gBgS5Fzhe5c"
+            class="copyright">https://youtu.be/gBgS5Fzhe5c</a><img src="pictures/chernivtsijs.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 style="margin-top: 250px; text-align: center;">Неструктурированный код сложно превратить в&nbsp;хороший
+            CSS-фреймворк</h2><img src="pictures/warning.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page">
+        <h2>Компоненты</h2>
+        <ol>
+            <li>Кнопки<img src="pictures/buttons.jpg" class="cover" />
+            </li>
+            <li class="next">Заголовки и текст<img src="pictures/text.jpg" class="cover" />
+            </li>
+            <li class="next">Изображения в сетке<img src="pictures/img-grid.jpg" class="cover" />
+            </li>
+            <li class="next">Карточки спикеров<img src="pictures/card.jpg" class="cover" />
+            </li>
+            <li class="next">Страницы спикеров<img src="pictures/speaker.jpg" class="cover" />
+            </li>
+            <li class="next">...</li>
+        </ol>
+    </section>
+    <section id="" class="slide  no-page">
+        <h2>DRY</h2><img src="pictures/good-code.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Почему Custom Properties?</h2>
+        <ul>
+            <li>Существуют в runtime и доступны для изменения</li>
+            <li class="next">Ограничены областью видимости DOM-элемента</li>
+            <li class="next">Наследуются вложенными элементами от родителя</li>
+            <li class="next">Возможность делать fallback</li>
+            <li class="next">Отличная поддержка браузерами</li>
+        </ul><a href="https://wsd.events/2016/10/29/pres/custom-properties" class="copyright">Пользовательские свойства
+            как основа архитектуры CSS, Павел Ловцевич</a>
+    </section>
+    <section id="" class="slide"><a href="https://caniuse.com/#feat=css-variables"
+            class="copyright">https://caniuse.com/#feat=css-variables</a><img src="pictures/caniuse-cp.jpg"
+            class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/grid.jpg" class="cover" />
+    </section>
+    <section id="" class="slide"><a href="https://caniuse.com/#feat=css-grid"
+            class="copyright">https://caniuse.com/#feat=css-grid</a><img src="pictures/caniuse-grid.jpg"
+            class="cover" />
+    </section>
+    <section id="" class="slide  no-page">
+        <h2>Сетка Bootstrap</h2>
+        <ul>
+            <li>10 файлов Sass с<code>@mixin</code> и<code>@extend</code></li>
+            <li>Много условий и логики</li>
+        </ul><img src="pictures/bootstrap-grid.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page">
+        <h2 class="ask">CSS Grid + Custom&nbsp;Properties</h2>
+        <div class="hashtag">#justdoit</div><a
+            href="https://github.com/lovata/aweCSSome/blob/master/common.blocks/grid/grid.css"
+            class="copyright">AweCSSome Grid Framework</a><img src="pictures/awecssome-grid.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Responsive Images</h2>
+        <pre><code class="html">&#x3C;picture&#x3E;
+  &#x3C;source srcset=&#x22;...&#x22; type=&#x22;image/svg+xml&#x22;&#x3E;
+  &#x3C;img src=&#x22;...&#x22; class=&#x22;img-fluid img-thumbnail&#x22; alt=&#x22;...&#x22;&#x3E;
+&#x3C;/picture&#x3E;</code></pre>
+    </section>
+    <section id="" class="slide">
+        <h2>srcset</h2>
+        <pre><code class="html">&#x3C;img srcset=&#x22;img-320w.jpg 320w,
+            img-480w.jpg 480w,
+            img-800w.jpg 800w&#x22;
+    sizes=&#x22;(max-width: 320px) 280px,
+           (max-width: 480px) 440px,
+           800px&#x22;
+    src=&#x22;img-800w.jpg&#x22; alt=&#x22;...&#x22;&#x3E;</code></pre>
+    </section>
+    <section id="" class="slide  no-page">
+        <video src="pictures/gif/images.mp4" loop muted playsinline autoplay class="cover width"></video>
+    </section>
+    <section id="" class="slide  no-page">
+        <h2 class="ask">Экономь трафик пользователя</h2>
+        <div class="hashtag">#justdoit</div>
+    </section>
+    <section id="" class="slide"><img src="pictures/owl.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2 class="ask">А если на проект приходит новый разработчик?</h2><img src="pictures/philosoraptor.jpg"
+            class="cover" />
+    </section>
+    <section id="" class="slide">
+        <p style="font-size: 2em;" class="shout"><a href="https://github.com/davidhund/styleguide-generators"
+                class="link link-github">davidhund/styleguide-generators</a></p>
+    </section>
+    <section id="" class="slide"><a href="https://github.com/morishitter/postcss-style-guide"
+            class="copyright">https://github.com/morishitter/postcss-style-guide</a><img src="pictures/psg.jpg"
+            class="cover" />
+    </section>
+    <section id="" class="slide">
+        <pre><code class="js">postcss([
+  ...,
+  styleGuide({
+      project: 'Project name',
+      dest: 'styleguide/index.html',
+      showCode: false,
+      themePath: '../'
+  }),
+  ...
+])</code></pre>
+    </section>
+    <section id="" class="slide">
+        <pre><code class="css">/* @styleguide
+   @title Button
+   Use the button classes on ...
+   &#x3C;button class=&#x22;button button--large&#x22;&#x3E;Large Button&#x3C;/button&#x3E;
+     &#x3C;button class=&#x22;button button--large&#x22;&#x3E;Large Button&#x3C;/button&#x3E;
+*/
+.button {
+   /* ... */
+}</code></pre>
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/psg-demo.jpg" class="cover">
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/spongebob.jpg" class="cover" />
+    </section>
+    <section id="" class="slide  no-page"><img src="pictures/oopstrap.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Вуаля!</h2>
+        <ul>
+            <li>CSS-библиотека под конкретный проект</li>
+            <li class="next">Со встроенной документацией</li>
+            <li class="next">С конкретными примерами компонентов конкретного проекта</li>
+            <li class="next">Сторонние библиотеки не запрещены</li>
+        </ul>
+    </section>
+    <section id="" class="slide">
+        <h2>Когда брать чужое?</h2>
+        <ul>
+            <li>Разрабатывается быстрый прототип</li>
+            <li class="next">Дизайн «заточен» под выбранную UI-библиотеку</li>
+            <li class="next">Нет дизайна</li>
+            <li class="next">Вы не умеете верстать</li>
+            <li class="next">Просто лень</li>
+        </ul><img src="pictures/philosoraptor.jpg" class="cover" />
+    </section>
+    <section id="" class="slide">
+        <h2>Подводя итог</h2>
+        <ul>
+            <li>Хватит ненавидеть библиотеки «потому что модно»</li>
+            <li class="next">Пользуйся инструментами осознанно</li>
+            <li class="next">Знай возможности современных CSS, HTML и JS</li>
+            <li class="next">Не переставай учиться</li>
+        </ul>
+    </section>
+    <section id="theend" class="slide no-page">
+        <p style="position: absolute; bottom: 5%; color: #fff" class="end-link"><a href="http://bit.ly/FC-bootstrap"
+                target="_blank" style="color:white" class="bigger">bit.ly/FC-bootstrap</a><br>Александра Шинкевич (<a
+                href="https://twitter.com/neesoglasnaja" target="_blank" style="color: white">@neesoglasnaja</a>)</p>
+        <img src="pictures/the_end.gif" style="width: 100%" class="cover">
+    </section>
+    <div class="progress"></div>
+    <script src="shower/shower.js"></script>
+    <script src="vendor/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+
+</html>
